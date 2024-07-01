@@ -1,8 +1,5 @@
 import streamlit as st
 from transformers import AutoTokenizer, DataCollatorWithPadding, BertTokenizer, BertForSequenceClassification
-import numpy as np
-import re
-import html
 import torch
 
 LABELS = ['NEGATIVE', 'POSITIVE']
