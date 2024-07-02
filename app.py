@@ -30,7 +30,7 @@ def main():
 
     # User input
     text_input = st.text_input(
-        'Enter a sentence:', placeholder='Movies was fantastic!')
+        'Enter a sentence:', placeholder='Movie was fantastic!')
 
  # Analyze sentiment
     if st.button('Analyze'):
@@ -39,11 +39,11 @@ def main():
             with torch.no_grad():
                 outputs = model(**inputs)
             logits = outputs.logits
-            pred_prob = torch.sigmoid(logits)
+            pred_prob = torch.round(torch.sigmoid(logits))
             pred = torch.argmax(pred_prob, dim=1)
             sentiment = LABELS[pred.item()]
             st.write(
-                f'The review is: {sentiment} with a probability of {pred_prob.max().item() * 100:.2f}% confidence.')
+                f'The review is: {sentiment} with a probability of {int(pred_prob.max().item() * 100)}% confidence.')
 
 
 if __name__ == '__main__':
