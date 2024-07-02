@@ -30,7 +30,7 @@ This repo contains ISOLERA internship projects
 
 ## Deployment
 
-[Streamlit Deployment](https://reviews-sentiment-analysis.streamlit.app/)
+### [Streamlit App](https://reviews-sentiment-analysis.streamlit.app/)
 
 ## Contributing
 
